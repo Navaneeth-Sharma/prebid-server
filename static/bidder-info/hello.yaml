@@ -1,0 +1,10 @@
+endpoint: "http://127.0.0.1:8081/bidder-endpoint"
+endpointCompression: gzip
+geoscope:
+  - global
+maintainer:
+  email: "hello@tech.com"
+capabilities:
+  site:
+    mediaTypes:
+      - banner

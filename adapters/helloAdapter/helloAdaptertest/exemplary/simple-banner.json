@@ -1,0 +1,134 @@
+{
+  "mockBidRequest": {
+    "id": "test-request-id",
+    "imp": [
+      {
+        "id": "123",
+        "banner": {
+          "format": [
+            {
+              "w": 300,
+              "h": 250
+            }
+          ]
+        },
+        "ext": {
+          "bidder": {}
+        }
+      },
+      {
+        "id": "567",
+        "banner": {
+          "format": [
+            {
+              "w": 300,
+              "h": 250
+            }
+          ]
+        },
+        "ext": {
+          "bidder": {}
+        }
+      }
+    ]
+  },
+
+  "httpCalls": [
+    {
+      "expectedRequest": {
+        "uri": "http://www.biddertest.com",
+        "body": {
+          "id": "test-request-id",
+          "imp": [
+            {
+              "id": "123",
+              "banner": {
+                "format": [
+                  {"w": 300, "h": 250}
+                ]
+              },
+              "ext": {
+                "hello_message": "hello-world"
+              }
+            },
+            {
+              "id": "567",
+              "banner": {
+                "format": [
+                  {"w": 300, "h": 250}
+                ]
+              },
+              "ext": {
+                "hello_message": "hello-world"
+              }
+            }
+          ]
+        },
+        "impIDs": ["123", "567"]
+      },
+      "mockResponse": {
+        "status": 200,
+        "body": {
+          "id": "test-request-id",
+          "seatbid": [
+            {
+              "bid": [
+                {
+                  "id": "bid-1",
+                  "impid": "123",
+                  "price": 3.5,
+                  "adm": "<creative>",
+                  "crid": "creative-1",
+                  "w": 300,
+                  "h": 250
+                },
+                {
+                  "id": "bid-2",
+                  "impid": "567",
+                  "price": 4.0,
+                  "adm": "<creative>",
+                  "crid": "creative-2",
+                  "w": 300,
+                  "h": 250
+                }
+              ]
+            }
+          ],
+          "cur": "USD"
+        }
+      }
+    }
+  ],
+
+  "expectedBidResponses": [
+    {
+      "currency": "USD",
+      "bids": [
+        {
+          "bid": {
+            "id": "bid-1",
+            "impid": "123",
+            "price": 3.5,
+            "adm": "<creative>",
+            "crid": "creative-1",
+            "w": 300,
+            "h": 250
+          },
+          "type": "banner"
+        },
+        {
+          "bid": {
+            "id": "bid-2",
+            "impid": "567",
+            "price": 4.0,
+            "adm": "<creative>",
+            "crid": "creative-2",
+            "w": 300,
+            "h": 250
+          },
+          "type": "banner"
+        }
+      ]
+    }
+  ]
+} 

@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Hello Adapter Params",
+    "description": "A schema which validates params accepted by the Hello adapter",
+    "type": "object",
+    "properties": {
+        "message": {
+            "type": "string",
+            "description": "Optional message parameter"
+        }
+    }
+} 

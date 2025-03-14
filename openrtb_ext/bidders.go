@@ -62,6 +62,7 @@ var coreBidderNames []BidderName = []BidderName{
 	BidderAso,
 	BidderAudienceNetwork,
 	BidderAutomatad,
+	BidderHello,
 	BidderAvocet,
 	BidderAxis,
 	BidderAxonix,
@@ -416,6 +417,7 @@ const (
 	BidderAso               BidderName = "aso"
 	BidderAudienceNetwork   BidderName = "audienceNetwork"
 	BidderAutomatad         BidderName = "automatad"
+	BidderHello             BidderName = "hello"
 	BidderAvocet            BidderName = "avocet"
 	BidderAxis              BidderName = "axis"
 	BidderAxonix            BidderName = "axonix"
